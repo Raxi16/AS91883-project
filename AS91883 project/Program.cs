@@ -39,149 +39,6 @@ int LevelEasy, score = 0;
 
 //Level Easy\\
 string answer;
-Console.ForegroundColor = ConsoleColor.Yellow;
-do
-{
-    if (selectionResult == 1)
-    {
-        Console.WriteLine("You have choosen lavel 'Easy'");
-        Console.WriteLine("Question 1 \n How to say 'Hello' in Māori?");
-        Console.WriteLine("\n a) Ka Kite \n b) Tino Pai \n c) Tumeke \n d) Kia Ora ");
-        answer = Console.ReadLine();
-        if (answer == "D" || answer == "d")
-        {
-            Console.WriteLine("Correct");
-            ++score;
-        }
-        else
-        {
-            Console.WriteLine("Incorrect");
-            Console.Beep();
-        }
-        Console.WriteLine("\n Question 2 \n Kei te pēhea koe means?");
-        Console.WriteLine("\n a) Goodbye \n b) How are you \n c) come in \n d) Im hungry");
-        answer = Console.ReadLine();
-        if (answer == "B" || answer == "b")
-        {
-            Console.WriteLine("Correct");
-            ++score;
-        }
-        else
-        {
-            Console.WriteLine("Incorrect");
-            Console.Beep();
-        }
-        Console.WriteLine("\nQuestion 3 \n Ata mārie means..");
-        Console.WriteLine("\n a) Good night \n b) Good morning \n c) hello \n d) Goodbye");
-        answer = Console.ReadLine();
-        if (answer == "B" || answer == "b")
-        {
-            Console.WriteLine("Correct");
-            ++score;
-        }
-        else
-        {
-            Console.WriteLine("Incorrect");
-            Console.Beep();
-        }
-        Console.WriteLine("\nQuestion 4 \n Pō mārie means 'good - night' what does Pō stand for?");
-        Console.WriteLine("\n a) night \n b) morning \n c) day \n d) month");
-        answer = Console.ReadLine();
-        if (answer == "A" || answer == "a")
-        {
-            Console.WriteLine("Correct");
-            ++score;
-        }
-        else
-        {
-            Console.WriteLine("Incorrect");
-            Console.Beep();
-        }
-        Console.WriteLine("\nQuestion 5 \n Kau mau te wehi! means..");
-        Console.WriteLine("\n a) bad \n b) not bad \n c) silly \n d) fantastic");
-        answer = Console.ReadLine();
-        if (answer == "D" || answer == "d")
-        {
-            Console.WriteLine("Correct");
-            ++score;
-        }
-        else
-        {
-            Console.WriteLine("Incorrect");
-            Console.Beep();
-        }
-        Console.WriteLine("\nQuestion 6 \n 'Ata Mārie e hoa' what does e hoa mean?");
-        Console.WriteLine("\n a) enemy \n b) person \n c) friend \n d) mother");
-        answer = Console.ReadLine();
-        if (answer == "C" || answer == "c")
-        {
-            Console.WriteLine("Correct");
-            ++score;
-        }
-        else
-        {
-            Console.WriteLine("Incorrect");
-            Console.Beep();
-        }
-        Console.WriteLine("\nQuestion 7 \n Tahi, Rua, Toru, Wha..... what is the next number in te reo?");
-        Console.WriteLine("\n a) Rima \n b) Ono \n c) Whitu \n d) Waru ");
-        answer = Console.ReadLine();
-        if (answer == "A" || answer == "a")
-        {
-            Console.WriteLine("Correct");
-            ++score;
-        }
-        else
-        {
-            Console.WriteLine("Incorrect");
-            Console.Beep();
-        }
-        Console.WriteLine("\nQuestion 8 \n 'Kai' stands for");
-        Console.WriteLine("\n a) drink \n b) food \n c) fork \n d) plate ");
-        answer = Console.ReadLine();
-        if (answer == "B" || answer == "b")
-        {
-            Console.WriteLine("Correct");
-            ++score;
-        }
-        else
-        {
-            Console.WriteLine("Incorrect");
-            Console.Beep();
-        }
-        Console.WriteLine("\nQuestion 9 \n Haere rā means...");
-        Console.WriteLine("\n a) good bye \n b) hello \n c) when \n d) where");
-        answer = Console.ReadLine();
-        if (answer == "A" || answer == "a")
-        {
-            Console.WriteLine("Correct");
-            ++score;
-        }
-        else
-        {
-            Console.WriteLine("Incorrect");
-            Console.Beep();
-        }
-        Console.WriteLine("\nQuestion 10 \n What is the English word for Kahurangi?");
-        Console.WriteLine("\n a) Green \n b) Red \n c) Bliue \n d) Yellow ");
-        answer = Console.ReadLine();
-        if (answer == "C" || answer == "c")
-        {
-            Console.WriteLine("Correct");
-            ++score;
-        }
-        else
-
-
-
-        {
-            Console.WriteLine("Incorrect");
-        }
-        Console.WriteLine($"Your score is {score}/10");
-        Console.WriteLine("If you want to restart the quiz please type 'y'");
-
-    }
-}
 if (selectionResult == 1)
 {
     Console.WriteLine("You have choosen lavel 'Easy'");
@@ -319,16 +176,15 @@ if (selectionResult == 1)
     }
     Console.WriteLine($"Your score is {score}/10");
 }
-
 //Level Medium\\
 Console.ForegroundColor = ConsoleColor.DarkYellow;
 if (selectionResult == 2)
 {
     Console.WriteLine("You have choosen level 'Medium'");
-    Console.WriteLine("Question 1 \n ");
-    Console.WriteLine("\n a) Ka Kite \n b) Tino Pai \n c) Tumeke \n d) Kia Ora ");
+    Console.WriteLine("Question 1 \n 2,4,6,8 in te reo maori is");
+    Console.WriteLine("\n rua, whā, ono, waru. \n b) tahi, toru, rima, whitu. \n c) rua, whā, whitu, waru. \n d) tahi, rua, toru, whā. ");
     answer = Console.ReadLine();
-    if (answer == "D" || answer == "d")
+    if (answer == "A" || answer == "a")
     {
         Console.WriteLine("Correct");
         ++score;
@@ -338,10 +194,10 @@ if (selectionResult == 2)
         Console.WriteLine("Incorrect");
         Console.Beep();
     }
-    Console.WriteLine("\n Question 2 \n Kei te pēhea koe means?");
-    Console.WriteLine("\n a) Goodbye \n b) How are you \n c) come in \n d) Im hungry");
+    Console.WriteLine("\n Question 2 \n What is the English for Turituri?");
+    Console.WriteLine("\n a) Turn around. \n b) Wait \n c) Quit \n d) Quite");
     answer = Console.ReadLine();
-    if (answer == "B" || answer == "b")
+    if (answer == "C" || answer == "c")
     {
         Console.WriteLine("Correct");
         ++score;
