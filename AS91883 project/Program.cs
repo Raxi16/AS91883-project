@@ -7,7 +7,7 @@ Console.Clear();
 Console.ForegroundColor = ConsoleColor.Black;
 Console.WriteLine("Hi There, \n This is a Te Reo Maori (Maori Language) quiz.This is a multichoise quiz but before starting with the quiz you have read the rules!!");
 Console.WriteLine("ELIGIBILITY FOR PARTICIPATING IN THIS QUIZ: The Quiz is open to people (the Participants) anywhere in the world who have completed the age of 10 years. \n BINDING AGREEMENT: In order to enter the Quiz, entrant must accept the official rules.\n The Rules Consist Of: \n (i) You shall not copy the answers \n (ii) you must be over 10 years old. \n (iii) The Participant should read this agreement carefully prior to entry to ensure that he/she understands and agrees, because these Rules form a legally binding agreement with respect to this Quiz.\n (iv) The Quiz will consist of 10 questions for the participants to answer for each level. \n (v) A participant must agree with this terms for the Quiz and complete the Quiz within 5 minutes.");
-//QUIZ Level selection\\
+//QUIZ Level selection - The user is given options here so they can choose which level they would like to do\\
 Restart:
 start = Console.ReadLine();
 while (start.ToLower() != "s")
@@ -27,6 +27,7 @@ while (!int.TryParse(Console.ReadLine(), out selectionResult) || selectionResult
 {
     Console.Write("\nPlease enter a valid level: ");
 }
+Console.Clear(); // Clears the console, so it doesn't crowd up to start the quiz.//
 int score = 0;
 //Level Easy\\
 string answer;
@@ -46,15 +47,15 @@ if (selectionResult == 1)
         answer = Console.ReadLine();
     }
     Console.Clear();
-    if (answer == "D" || answer == "d")
+    if (answer == "D" || answer == "d") // It's checks if the answer is correct, if the answer is correct it will display a message saying 'correct'//
     {
         Console.WriteLine("Correct");
-        ++score;
+        ++score; // If the answer is correct, 1 point will be added to score.//
     }
-    else
+    else // This give the user one more chance to get the answer right//
     {
         Console.WriteLine("Incorrect");
-        Console.Beep();
+        Console.Beep();// If the answer is incorrect, a beep sound will be played with a message displaying 'incorrect'.// 
         Console.WriteLine("Question 1 \n How to say 'Hello' in Māori?");
         Console.WriteLine("\n a) Ka Kite \n b) Tino Pai \n c) Tumeke \n d) Kia Ora ");
         answer = Console.ReadLine();
@@ -70,7 +71,7 @@ if (selectionResult == 1)
         }
 
     }
-    Console.Clear();
+    Console.Clear(); // Clears the console, removing other questions so that the user does not have to scroll down and it doesn't crowd up on the display//
     Console.WriteLine("\n Question 2 \n Kei te pēhea koe means?");
     Console.WriteLine("\n a) Goodbye \n b) How are you \n c) come in \n d) Im hungry");
     answer = Console.ReadLine();
@@ -364,8 +365,8 @@ if (selectionResult == 1)
 
     }
     Console.Clear();
-    Console.WriteLine($"Your score is {score}/10");
-    Console.WriteLine("If you want to take the quiz again Please type 'Y' for yes and any other key to exit.");
+    Console.WriteLine($"Your score is {score}/10"); // Displays the users score from the quiz, this is for every correct question they get it right.//
+    Console.WriteLine("If you want to take the quiz again Please type 'Y' for yes and any other key to exit."); // Asks the user if they would like to re take the quiz.//
     again = Console.ReadLine();
     while (answer != "d" && answer != "c" && answer != "a" && answer != "b" && answer != "D" && answer != "C" && answer != "A" && answer != "B")
     {
@@ -373,7 +374,7 @@ if (selectionResult == 1)
         answer = Console.ReadLine();
     }
     Console.Clear();
-    if (again == "Y" || again == "y")
+    if (again == "Y" || again == "y") // If the user inputs Y, they will be taken to the start of the quiz again where they can choose what mode they want to do but if they press any other key it will exit//
     {
         goto Restart;
     }
@@ -381,7 +382,7 @@ if (selectionResult == 1)
 //Level Medium\\
 if (selectionResult == 2)
 {
-    Console.BackgroundColor = ConsoleColor.DarkCyan;
+    Console.BackgroundColor = ConsoleColor.Black;
     Console.Clear();
     Console.ForegroundColor = ConsoleColor.DarkYellow;
     Console.WriteLine("You have choosen level 'Medium'");
@@ -516,16 +517,29 @@ if (selectionResult == 2)
             Console.WriteLine("Incorrect");
             Console.Beep();
         }
-        Console.Clear();
+    }
+    Console.Clear();
+    Console.WriteLine("\nQuestion 5 \n what is the word for Yellow in te reo?");
+    Console.WriteLine("\n a) Kowhai \n b) Kikirangi \n c) Kahurangi \n d) Pango ");
+    answer = Console.ReadLine();
+    while (answer != "d" && answer != "c" && answer != "a" && answer != "b" && answer != "D" && answer != "C" && answer != "A" && answer != "B")
+    {
+        Console.WriteLine("Please enter a vailid input.");
+        answer = Console.ReadLine();
+    }
+    Console.Clear();
+    if (answer == "A" || answer == "a")
+    {
+        Console.WriteLine("Correct");
+        ++score;
+    }
+    else
+    {
+        Console.WriteLine("Incorrect");
+        Console.Beep();
         Console.WriteLine("\nQuestion 5 \n what is the word for Yellow in te reo?");
         Console.WriteLine("\n a) Kowhai \n b) Kikirangi \n c) Kahurangi \n d) Pango ");
         answer = Console.ReadLine();
-        while (answer != "d" && answer != "c" && answer != "a" && answer != "b" && answer != "D" && answer != "C" && answer != "A" && answer != "B")
-        {
-            Console.WriteLine("Please enter a vailid input.");
-            answer = Console.ReadLine();
-        }
-        Console.Clear();
         if (answer == "A" || answer == "a")
         {
             Console.WriteLine("Correct");
@@ -535,30 +549,30 @@ if (selectionResult == 2)
         {
             Console.WriteLine("Incorrect");
             Console.Beep();
-            Console.WriteLine("\nQuestion 5 \n what is the word for Yellow in te reo?");
-            Console.WriteLine("\n a) Kowhai \n b) Kikirangi \n c) Kahurangi \n d) Pango ");
-            answer = Console.ReadLine();
-            if (answer == "A" || answer == "a")
-            {
-                Console.WriteLine("Correct");
-                ++score;
-            }
-            else
-            {
-                Console.WriteLine("Incorrect");
-                Console.Beep();
-            }
         }
-        Console.Clear();
+    }
+    Console.Clear();
+    Console.WriteLine("\nQuestion 6 \n How many people would I be talking to if I said Tena Koe?");
+    Console.WriteLine("\n a) 1 \n b) 2 \n c) 3 \n d) 3 or more ");
+    answer = Console.ReadLine();
+    while (answer != "d" && answer != "c" && answer != "a" && answer != "b" && answer != "D" && answer != "C" && answer != "A" && answer != "B")
+    {
+        Console.WriteLine("Please enter a vailid input.");
+        answer = Console.ReadLine();
+    }
+    Console.Clear();
+    if (answer == "A" || answer == "a")
+    {
+        Console.WriteLine("Correct");
+        ++score;
+    }
+    else
+    {
+        Console.WriteLine("Incorrect");
+        Console.Beep();
         Console.WriteLine("\nQuestion 6 \n How many people would I be talking to if I said Tena Koe?");
         Console.WriteLine("\n a) 1 \n b) 2 \n c) 3 \n d) 3 or more ");
         answer = Console.ReadLine();
-        while (answer != "d" && answer != "c" && answer != "a" && answer != "b" && answer != "D" && answer != "C" && answer != "A" && answer != "B")
-        {
-            Console.WriteLine("Please enter a vailid input.");
-            answer = Console.ReadLine();
-        }
-        Console.Clear();
         if (answer == "A" || answer == "a")
         {
             Console.WriteLine("Correct");
@@ -568,30 +582,30 @@ if (selectionResult == 2)
         {
             Console.WriteLine("Incorrect");
             Console.Beep();
-            Console.WriteLine("\nQuestion 6 \n How many people would I be talking to if I said Tena Koe?");
-            Console.WriteLine("\n a) 1 \n b) 2 \n c) 3 \n d) 3 or more ");
-            answer = Console.ReadLine();
-            if (answer == "A" || answer == "a")
-            {
-                Console.WriteLine("Correct");
-                ++score;
-            }
-            else
-            {
-                Console.WriteLine("Incorrect");
-                Console.Beep();
-            }
         }
-        Console.Clear();
+    }
+    Console.Clear();
+    Console.WriteLine("\nQuestion 7 \n Wait is... means in te reo maori?");
+    Console.WriteLine("\n a) Turituri \n b) Patai \n c) Tatao \n d) Taihoa ");
+    answer = Console.ReadLine();
+    while (answer != "d" && answer != "c" && answer != "a" && answer != "b" && answer != "D" && answer != "C" && answer != "A" && answer != "B")
+    {
+        Console.WriteLine("Please enter a vailid input.");
+        answer = Console.ReadLine();
+    }
+    Console.Clear();
+    if (answer == "D" || answer == "d")
+    {
+        Console.WriteLine("Correct");
+        ++score;
+    }
+    else
+    {
+        Console.WriteLine("Incorrect");
+        Console.Beep();
         Console.WriteLine("\nQuestion 7 \n Wait is... means in te reo maori?");
         Console.WriteLine("\n a) Turituri \n b) Patai \n c) Tatao \n d) Taihoa ");
         answer = Console.ReadLine();
-        while (answer != "d" && answer != "c" && answer != "a" && answer != "b" && answer != "D" && answer != "C" && answer != "A" && answer != "B")
-        {
-            Console.WriteLine("Please enter a vailid input.");
-            answer = Console.ReadLine();
-        }
-        Console.Clear();
         if (answer == "D" || answer == "d")
         {
             Console.WriteLine("Correct");
@@ -601,30 +615,30 @@ if (selectionResult == 2)
         {
             Console.WriteLine("Incorrect");
             Console.Beep();
-            Console.WriteLine("\nQuestion 7 \n Wait is... means in te reo maori?");
-            Console.WriteLine("\n a) Turituri \n b) Patai \n c) Tatao \n d) Taihoa ");
-            answer = Console.ReadLine();
-            if (answer == "D" || answer == "d")
-            {
-                Console.WriteLine("Correct");
-                ++score;
-            }
-            else
-            {
-                Console.WriteLine("Incorrect");
-                Console.Beep();
-            }
         }
-        Console.Clear();
+    }
+    Console.Clear();
+    Console.WriteLine("\nQuestion 8 \n Which of these is not a positive statement?");
+    Console.WriteLine("\n a) Tino Pai \n b) Ka rawe \n c) Rārangi mai \n d) Tino pai rawa atu ");
+    answer = Console.ReadLine();
+    while (answer != "d" && answer != "c" && answer != "a" && answer != "b" && answer != "D" && answer != "C" && answer != "A" && answer != "B")
+    {
+        Console.WriteLine("Please enter a vailid input.");
+        answer = Console.ReadLine();
+    }
+    Console.Clear();
+    if (answer == "C" || answer == "c")
+    {
+        Console.WriteLine("Correct");
+        ++score;
+    }
+    else
+    {
+        Console.WriteLine("Incorrect");
+        Console.Beep();
         Console.WriteLine("\nQuestion 8 \n Which of these is not a positive statement?");
         Console.WriteLine("\n a) Tino Pai \n b) Ka rawe \n c) Rārangi mai \n d) Tino pai rawa atu ");
         answer = Console.ReadLine();
-        while (answer != "d" && answer != "c" && answer != "a" && answer != "b" && answer != "D" && answer != "C" && answer != "A" && answer != "B")
-        {
-            Console.WriteLine("Please enter a vailid input.");
-            answer = Console.ReadLine();
-        }
-        Console.Clear();
         if (answer == "C" || answer == "c")
         {
             Console.WriteLine("Correct");
@@ -634,29 +648,29 @@ if (selectionResult == 2)
         {
             Console.WriteLine("Incorrect");
             Console.Beep();
-            Console.WriteLine("\nQuestion 8 \n Which of these is not a positive statement?");
-            Console.WriteLine("\n a) Tino Pai \n b) Ka rawe \n c) Rārangi mai \n d) Tino pai rawa atu ");
+        }
+        Console.Clear();
+        Console.WriteLine("\nQuestion 9 \n What does pukapuka mean?");
+        Console.WriteLine("\n a) Paper \n b) Book \n c) Pencil \n d) Bread ");
+        answer = Console.ReadLine();
+        while (answer != "d" && answer != "c" && answer != "a" && answer != "b" && answer != "D" && answer != "C" && answer != "A" && answer != "B")
+        {
+            Console.WriteLine("Please enter a vailid input.");
             answer = Console.ReadLine();
-            if (answer == "C" || answer == "c")
-            {
-                Console.WriteLine("Correct");
-                ++score;
-            }
-            else
-            {
-                Console.WriteLine("Incorrect");
-                Console.Beep();
-            }
-            Console.Clear();
+        }
+        Console.Clear();
+        if (answer == "B" || answer == "b")
+        {
+            Console.WriteLine("Correct");
+            ++score;
+        }
+        else
+        {
+            Console.WriteLine("Incorrect");
+            Console.Beep();
             Console.WriteLine("\nQuestion 9 \n What does pukapuka mean?");
             Console.WriteLine("\n a) Paper \n b) Book \n c) Pencil \n d) Bread ");
             answer = Console.ReadLine();
-            while (answer != "d" && answer != "c" && answer != "a" && answer != "b" && answer != "D" && answer != "C" && answer != "A" && answer != "B")
-            {
-                Console.WriteLine("Please enter a vailid input.");
-                answer = Console.ReadLine();
-            }
-            Console.Clear();
             if (answer == "B" || answer == "b")
             {
                 Console.WriteLine("Correct");
@@ -666,29 +680,29 @@ if (selectionResult == 2)
             {
                 Console.WriteLine("Incorrect");
                 Console.Beep();
-                Console.WriteLine("\nQuestion 9 \n What does pukapuka mean?");
-                Console.WriteLine("\n a) Paper \n b) Book \n c) Pencil \n d) Bread ");
-                answer = Console.ReadLine();
-                if (answer == "B" || answer == "b")
-                {
-                    Console.WriteLine("Correct");
-                    ++score;
-                }
-                else
-                {
-                    Console.WriteLine("Incorrect");
-                    Console.Beep();
-                }
             }
-            Console.Clear();
+        }
+        Console.Clear();
+        Console.WriteLine("\nQuestion 10 \n What is the Maori word for river?");
+        Console.WriteLine("\n a) Maunga \n b) Awa \n c) Moana \n d) Roto ");
+        answer = Console.ReadLine();
+        while (answer != "d" && answer != "c" && answer != "a" && answer != "b" && answer != "D" && answer != "C" && answer != "A" && answer != "B")
+        {
+            Console.WriteLine("Please enter a vailid input.");
+            answer = Console.ReadLine();
+        }
+        if (answer == "B" || answer == "b")
+        {
+            Console.WriteLine("Correct");
+            ++score;
+        }
+        else
+        {
+            Console.WriteLine("Incorrect");
+            Console.Beep();
             Console.WriteLine("\nQuestion 10 \n What is the Maori word for river?");
             Console.WriteLine("\n a) Maunga \n b) Awa \n c) Moana \n d) Roto ");
             answer = Console.ReadLine();
-            while (answer != "d" && answer != "c" && answer != "a" && answer != "b" && answer != "D" && answer != "C" && answer != "A" && answer != "B")
-            {
-                Console.WriteLine("Please enter a vailid input.");
-                answer = Console.ReadLine();
-            }
             if (answer == "B" || answer == "b")
             {
                 Console.WriteLine("Correct");
@@ -698,40 +712,29 @@ if (selectionResult == 2)
             {
                 Console.WriteLine("Incorrect");
                 Console.Beep();
-                Console.WriteLine("\nQuestion 10 \n What is the Maori word for river?");
-                Console.WriteLine("\n a) Maunga \n b) Awa \n c) Moana \n d) Roto ");
-                answer = Console.ReadLine();
-                if (answer == "B" || answer == "b")
-                {
-                    Console.WriteLine("Correct");
-                    ++score;
-                }
-                else
-                {
-                    Console.WriteLine("Incorrect");
-                    Console.Beep();
-                }
-            }
-            Console.Clear();
-            Console.WriteLine($"Your score is {score}/10");
-            Console.WriteLine("If you want to take the quiz again Please type 'Y' for yes and any other key to exit.");
-            again = Console.ReadLine();
-            while (answer != "d" && answer != "c" && answer != "a" && answer != "b" && answer != "D" && answer != "C" && answer != "A" && answer != "B")
-            {
-                Console.WriteLine("Please enter a vailid input.");
-                answer = Console.ReadLine();
-            }
-            Console.Clear();
-            if (again == "Y" || again == "y")
-            {
-                goto Restart;
             }
         }
-        //Level Hard\\
-        if (selectionResult == 3)
+        Console.Clear();
+        Console.WriteLine($"Your score is {score}/10");
+        Console.WriteLine("If you want to take the quiz again Please type 'Y' for yes and any other key to exit.");
+        again = Console.ReadLine();
+        while (answer != "d" && answer != "c" && answer != "a" && answer != "b" && answer != "D" && answer != "C" && answer != "A" && answer != "B")
         {
-            Console.BackgroundColor = ConsoleColor.Cyan;
-            Console.Clear();
+            Console.WriteLine("Please enter a vailid input.");
+            answer = Console.ReadLine();
+        }
+        Console.Clear();
+        if (again == "Y" || again == "y")
+        {
+            goto Restart;
+        }
+    }
+}
+  //Level Hard\\
+if (selectionResult == 3)
+{
+  Console.BackgroundColor = ConsoleColor.Black;
+  Console.Clear();
             Console.ForegroundColor = ConsoleColor.DarkRed;
             Console.WriteLine("You have choosen level 'Hard'");
             Console.WriteLine("Question 1 \n What is the Maori word for New Zealand?");
@@ -1078,6 +1081,4 @@ if (selectionResult == 2)
             {
                 goto Restart;
             }
-        }
-    }
 }
